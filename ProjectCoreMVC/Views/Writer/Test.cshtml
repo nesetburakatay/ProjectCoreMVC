@@ -1,0 +1,11 @@
+﻿@model DateTime
+@{
+    Layout = "~/Views/Shared/_LayoutWriter.cshtml";
+}
+
+
+
+<h1>test</h1>
+<h1>
+        @DateTime.Now.Subtract(Model).Minutes.ToString()
+</h1>

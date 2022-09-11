@@ -1,0 +1,13 @@
+﻿@using ProjectCoreMVC.Models
+@model IEnumerable<UserComment>
+
+
+@foreach (var item in Model)
+{
+    <p>@item.Id</p>
+    <p>@item.Username</p>
+}
+
+
+
+<h1>burası view component</h1>

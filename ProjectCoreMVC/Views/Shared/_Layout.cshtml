@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjectCoreMVC</title>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <link href="~/Theme-Main/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Theme-Main/css/single.css">
+    <link href="~/Theme-Main/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/Theme-Main/css/fontawesome-all.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+          rel="stylesheet">
+
+</head>
+<body>
+    <!--Header-->
+    @await Html.PartialAsync("_PartialLayoutHeader")
+    <!--//header-->
+    <!--/banner-->
+    @*<div class="banner-inner">
+        </div>*@
+    @*<ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Blog3</li>
+        </ol>*@
+    <!--//banner-->
+    <!--/main-->
+    @RenderBody()
+    <!--//main-->
+    <!--footer-->
+    @await Html.PartialAsync("_PartialLayoutFooter")
+
+
+
+    <!--footer-->
+    <!-- js -->
+    <script src="~/Theme-Main/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!--/ start-smoth-scrolling -->
+    <script src="~/Theme-Main/js/move-top.js"></script>
+    <script src="~/Theme-Main/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <!--// end-smoth-scrolling -->
+    <script>
+        $(document).ready(function () {
+            /*
+                                    var defaults = {
+                                            containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear'
+                                        };
+                                    */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <a href="#home" class="scroll" id="toTop" style="display: block;">
+        <span id="toTopHover" style="opacity: 1;"> </span>
+    </a>
+    <!-- //Custom-JavaScript-File-Links -->
+    <script src="~/Theme-Main/js/bootstrap.js"></script>
+</body>
+</html>
