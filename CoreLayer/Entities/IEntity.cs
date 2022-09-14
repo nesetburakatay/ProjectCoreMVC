@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace deneme
+namespace CoreLayer.Entities
 {
-    interface MyInterface
+    public interface IEntity
     {
-        public int testıd { get; set; }
-        void testFunct();
     }
 }

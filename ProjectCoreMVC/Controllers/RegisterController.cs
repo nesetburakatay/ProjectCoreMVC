@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using EntityLayer.Concreate;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,7 +11,11 @@ namespace ProjectCoreMVC.Controllers
 {
     public class RegisterController : Controller
     {
-        WriterManager wm = new WriterManager(new EFWriterRepository());
+        IWriterService _writerService;
+        public RegisterController(IWriterService value)
+        {
+            _writerService = value;
+        }
         public IActionResult Index()
         {
             return View();
@@ -26,7 +30,7 @@ namespace ProjectCoreMVC.Controllers
 
             value.WriterAbout = "about is not empty";
             value.WriterStatus = true;
-            wm.Add(value);
+            _writerService.Add(value);
             return RedirectToAction("Index", "Blog");
         }
     }

@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Repostories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer\CoreLayer.csproj" />
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 

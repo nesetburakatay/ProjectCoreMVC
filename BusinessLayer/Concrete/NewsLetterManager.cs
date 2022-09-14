@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(NewsLetter t)
         {
-            _newletterDal.Insert(t);
+            _newletterDal.Add(t);
         }
 
         public void Delete(NewsLetter t)

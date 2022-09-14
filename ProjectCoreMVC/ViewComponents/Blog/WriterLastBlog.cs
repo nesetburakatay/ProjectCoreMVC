@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,10 +11,15 @@ namespace ProjectCoreMVC.ViewComponents.Blog
 {
     public class WriterLastBlog : ViewComponent
     {
-        BlogManager bm = new BlogManager(new EFBlogRepository());
+        IBlogService _blogService;
+        public WriterLastBlog(IBlogService value)
+        {
+            _blogService = value;
+        }
+
         public IViewComponentResult Invoke(int id)
         {
-            var value = bm.GetblogListByWriter(id);
+            var value = _blogService.GetblogListByWriter(id);
             return View(value);
 
         }

@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using EntityLayer.Concreate;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,8 +11,11 @@ namespace ProjectCoreMVC.Controllers
 {
     public class CommentController : Controller
     {
-        CommentManager cm = new CommentManager(new EFCommentRepository());
-
+        ICommentService _commentService;
+        public CommentController(ICommentService value)
+        {
+            _commentService = value;
+        }
         public IActionResult Index()
         {
             return View();
@@ -27,12 +30,12 @@ namespace ProjectCoreMVC.Controllers
             value.CommentDateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
             value.CommentStatus = true;
             value.BlogId = id;
-            cm.Add(value);
+            _commentService.Add(value);
             return RedirectToAction("BlogDetails", "Blog",new { Controller="Blog",Action="BlogDetails",id=id});
         }
         public PartialViewResult CommentListByBlog(int id)
         {   
-            var value = cm.GetlistById(id);
+            var value = _commentService.GetlistById(id);
             return PartialView(value);
         }
     }

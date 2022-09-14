@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7zUbaMnBIxliN5w+EfsgluTc5lpj1ehR7jKEDSYhXUrTikrykbWAU3vTunrVCRw/m8/avXIUhXuCUdL6EGdSuA==",
+  "dgSpecHash": "V/TcQfNFV/zdA4GrXKT5bfgwfgTlGtK7Pa6S+9t5P4wSczupAYfI7H+cr8uTafiYX8gbx7nTUcnMmN5kKgV+NA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\ProjectCoreMVC\\ProjectCoreMVC.csproj",
+  "projectFilePath": "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\ProjectCoreMVC\\ProjectCoreMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elifc\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\elifc\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",

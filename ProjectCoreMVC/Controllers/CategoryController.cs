@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,15 @@ namespace ProjectCoreMVC.Controllers
 {
     public class CategoryController : Controller
     {
-        CategoryManager cm = new CategoryManager(new EFCategoryRepository());
+        ICategoryService _categoryService;
+        public CategoryController(ICategoryService value)
+        {
+            _categoryService = value;
+        }
         public IActionResult Index()
         {
-            var values = cm.Getlist();
+            var values = _categoryService.Getlist();
+            //var values = cm.Getlist();
             return View(values);
         }
     }

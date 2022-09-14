@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(Contact t)
         {
-            _contactdal.Insert(t);
+            _contactdal.Add(t);
         }
 
         public void Delete(Contact t)

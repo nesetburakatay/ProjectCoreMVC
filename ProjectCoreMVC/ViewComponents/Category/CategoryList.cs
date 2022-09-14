@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace ProjectCoreMVC.ViewComponents.Category
 {
-    public class CategoryList :ViewComponent
+    public class CategoryList : ViewComponent
     {
-        CategoryManager cm = new CategoryManager(new EFCategoryRepository());
+        ICategoryService _categoryService;
+        public CategoryList(ICategoryService value)
+        {
+            _categoryService = value;
+        }
 
         public IViewComponentResult Invoke()
         {
-            var value = cm.Getlist();
+            var value = _categoryService.Getlist();
             return View(value);
         }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "itCSstWy9ZthvnVEQZR2tdh6K+Lhwm5D/9DQDQrmmjd2Q+at40/OTDM3BZFWlQUPztL4wxTtxRe/5bwFcb7Z9A==",
+  "dgSpecHash": "BlDUxAmDlzEjLYaJXn9c8k9TOX8+L6oDSp5GrSSUdAYcxoMFtwOwhZWgDHaKvBxScml0jeHxwxx/Zu+aJEkoKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elifc\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\elifc\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",

@@ -1,4 +1,8 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -28,6 +32,38 @@ namespace ProjectCoreMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddScoped<IAboutDal, EFAboutDal>();
+            services.AddScoped<IBlogDal, EFBlogDal>();
+            services.AddScoped<ICategoryDal, EFCategoryDal>();
+            services.AddScoped<ICommentDal, EFCommentDal>();
+            services.AddScoped<IContactDal, EFContactDal>();
+            services.AddScoped<INewsLetterDal, EFNewsLetterDal>();
+            services.AddScoped<IWriteDal, EFWriterDal>();
+
+            services.AddScoped<IBlogService, BlogManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<INewsLetterService, NewsLetterManager>();
+            services.AddScoped<IWriterService, WriterManager>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //.AddFluentValida.... dan sonrasý Fluent validasyon iþlemlerini projeye servis olarak ekler.
             services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<WriterValidator>());
 

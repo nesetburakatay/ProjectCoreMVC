@@ -21,7 +21,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(Comment t)
         {
-            _commentDal.Insert(t);
+            _commentDal.Add(t);
         }
         public void Delete(Comment t)
         {
@@ -42,7 +42,7 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> GetlistById(int id)
         {
-            return _commentDal.GetListAll(x => x.BlogId == id);
+            return _commentDal.GetList(x => x.BlogId == id);
         }
     }
 }

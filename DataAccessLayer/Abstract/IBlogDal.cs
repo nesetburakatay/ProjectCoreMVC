@@ -1,4 +1,5 @@
-﻿using EntityLayer.Concreate;
+﻿using CoreLayer.DataAccess;
+using EntityLayer.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal:IGenericDal<Blog>
+    public interface IBlogDal: IEntityRepository<Blog>
     {
-        List<Blog> GetlistWithCategory();
-        void test1234();
+        List<Blog> GetBloglistWithCategory();
     }
 }

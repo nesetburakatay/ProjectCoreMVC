@@ -34,6 +34,7 @@
       "ProjectCoreMVC/1.0.0": {
         "dependencies": {
           "BusinessLayer": "1.0.0",
+          "CoreLayer": "1.0.0",
           "DataAccessLayer": "1.0.0",
           "EntityLayer": "1.0.0",
           "FluentValidation.AspNetCore": "9.3.0",
@@ -1861,6 +1862,7 @@
       },
       "BusinessLayer/1.0.0": {
         "dependencies": {
+          "CoreLayer": "1.0.0",
           "DataAccessLayer": "1.0.0",
           "EntityLayer": "1.0.0",
           "FluentValidation.AspNetCore": "9.3.0"
@@ -1872,8 +1874,20 @@
           "BusinessLayer.dll": {}
         }
       },
+      "CoreLayer/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9"
+        },
+        "runtime": {
+          "CoreLayer.dll": {}
+        },
+        "compile": {
+          "CoreLayer.dll": {}
+        }
+      },
       "DataAccessLayer/1.0.0": {
         "dependencies": {
+          "CoreLayer": "1.0.0",
           "EntityLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
@@ -1886,6 +1900,9 @@
         }
       },
       "EntityLayer/1.0.0": {
+        "dependencies": {
+          "CoreLayer": "1.0.0"
+        },
         "runtime": {
           "EntityLayer.dll": {}
         },
@@ -4477,6 +4494,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

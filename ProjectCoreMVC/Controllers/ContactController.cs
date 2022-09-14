@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using EntityLayer.Concreate;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,7 +11,11 @@ namespace ProjectCoreMVC.Controllers
 {
     public class ContactController : Controller
     {
-        ContactManager cm = new ContactManager(new EFContactRepository());
+        IContactService _contactService;
+        public ContactController(IContactService value)
+        {
+            _contactService = value;
+        }
         [HttpGet]
         public IActionResult Index()
         {
@@ -22,7 +26,7 @@ namespace ProjectCoreMVC.Controllers
         {
             value.ContactDateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
             value.ContactStatus = true;
-            cm.Add(value);
+            _contactService.Add(value);
             return RedirectToAction("Index","Contact");
         }
     }

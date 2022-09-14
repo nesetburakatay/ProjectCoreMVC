@@ -1,5 +1,6 @@
 ﻿@using EntityLayer.Concreate
-@model IEnumerable<Blog>
+@model Blog
+
 @{
     ViewData["Title"] = "BlogDetails";
 }
@@ -7,14 +8,10 @@
 
 
 
+
 <h1>
-    @foreach (var item in Model)
-    {
-        @item.BlogId
-
-    }
+        @Model.BlogId
 </h1>
-
 
 <section class="banner-bottom">
     <!--/blog-->
@@ -23,8 +20,8 @@
             <!--left-->
             <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
 
-                @foreach (var item in Model)
-                {
+         
+                
                     <div class="blog-grid-top">
                         <div class="b-grid-top">
                             <div class="blog_info_left_grid">
@@ -54,30 +51,28 @@
                         </div>
 
                         <h2>
-                            @item.BlogTitle
+                            @Model.BlogTitle
                         </h2>
                         <p>
-                            @item.BlogContent
+                            @Model.BlogContent
                         </p>
                         @*<a href="single.html" class="btn btn-primary read-m">Read More</a>*@
                     </div>
-                }
+                
 
 
 
-                @foreach (var item in Model)
-                {
-                    @await Component.InvokeAsync("CommentListByBlog", new { id = item.BlogId })
-                }
+              
+                
+                    @await Component.InvokeAsync("CommentListByBlog", new { id = Model.BlogId })
+                
 
 
                 @*@await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml")*@
 
-                @foreach (var item in Model)
-                {
-                    @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", new Blog { BlogId =item.BlogId})
+                    @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", new Blog { BlogId = Model.BlogId })
 
-                }
+                
 
 
 
@@ -96,10 +91,10 @@
                     </div>
                     @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
                     @await Component.InvokeAsync("CategoryList")
-                    @foreach (var item in Model)
-                    {
-                        @await Component.InvokeAsync("WriterLastBlog", new { id = item.WriterId })
-                    }
+             
+                    
+                        @await Component.InvokeAsync("WriterLastBlog", new { id = Model.WriterId })
+                    
                     <div class="tech-btm">
                         <h4>Top stories of thesadasdad week</h4>
 

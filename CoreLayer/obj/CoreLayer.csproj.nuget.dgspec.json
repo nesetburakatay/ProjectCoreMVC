@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj": {}
+    "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj": {
+    "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj",
+        "projectUniqueName": "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj",
         "projectName": "CoreLayer",
-        "projectPath": "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj",
+        "projectPath": "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\CoreLayer\\CoreLayer.csproj",
         "packagesPath": "C:\\Users\\elifc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elifc\\Desktop\\Yeni klasör (4)\\ProjectCoreMVC\\CoreLayer\\obj\\",
+        "outputPath": "C:\\Users\\elifc\\Desktop\\conrinue from there\\ProjectCoreMVC\\CoreLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

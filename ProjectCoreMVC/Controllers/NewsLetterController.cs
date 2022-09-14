@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using EntityLayer.Concreate;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,8 +11,11 @@ namespace ProjectCoreMVC.Controllers
 {
     public class NewsLetterController : Controller
     {
-        NewsLetterManager nm = new NewsLetterManager(new EFNewsLetterRepository());
-
+        INewsLetterService _newsletterService;
+        public NewsLetterController(INewsLetterService value)
+        {
+            _newsletterService = value;
+        }
         public IActionResult SubscribeMail()
         {
             return PartialView();
@@ -21,7 +24,7 @@ namespace ProjectCoreMVC.Controllers
         public IActionResult SubscribeMail(NewsLetter value)
         {
             value.MailStatus = true;
-            nm.Add(value);
+            _newsletterService.Add(value);
             return RedirectToAction("Index","Home");
         }
     }

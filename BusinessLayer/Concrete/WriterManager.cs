@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(Writer t)
         {
-            _writerdal.Insert(t);
+            _writerdal.Add(t);
         }
 
         public void Delete(Writer t)
